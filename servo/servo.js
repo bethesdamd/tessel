@@ -8,7 +8,7 @@ to the console at each movement.
 var tessel = require('tessel');
 var servolib = require('servo-pca9685');
 
-var servo = servolib.use(tessel.port['A']);
+var servo = servolib.use(tessel.port['B']);
 
 var servo1 = 1; // We have a servo plugged in at position 1
 
@@ -27,7 +27,7 @@ servo.on('ready', function () {
       servo.move(servo1, position);
 
       // Increment by 10% (~18 deg for a normal servo)
-      position += 0.1;
+      position += 0.005;
       if (position > 1) {
         position = 0; // Reset servo position
       }
